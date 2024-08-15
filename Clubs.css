@@ -1,0 +1,575 @@
+/**
+* Template Name: QuickStart
+* Template URL: https://bootstrapmade.com/quickstart-bootstrap-startup-website-template/
+* Updated: Jun 29 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
+/* Fonts */
+:root {
+    --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Nunito",  sans-serif;
+    --nav-font: "Inter",  sans-serif;
+  }
+  
+  /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+  :root { 
+    --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+    --default-color: #3d4348; /* Default color used for the majority of the text content across the entire website */
+    --heading-color: #3e5055; /* Color for headings, subheadings and title throughout the website */
+    --accent-color: #388da8; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+    --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+    --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  }
+  
+  /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+  :root {
+    --nav-color: #313336;  /* The default color of the main navmenu links */
+    --nav-hover-color: #77b6ca; /* Applied to main navmenu links when they are hovered over or active */
+    --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+    --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+    --nav-dropdown-color: #313336; /* Used for navigation links of the dropdown items in the navigation menu. */
+    --nav-dropdown-hover-color: #77b6ca; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  }
+  
+  /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+  
+  .light-background {
+    --background-color: #f8fbfc;
+    --surface-color: #ffffff;
+  }
+  
+  .dark-background {
+    --background-color: #060606;
+    --default-color: #ffffff;
+    --heading-color: #ffffff;
+    --surface-color: #252525;
+    --contrast-color: #ffffff;
+  }
+  
+  /* Smooth scroll */
+  :root {
+    scroll-behavior: smooth;
+  }
+  
+  .d-flex {
+    display: flex;
+  }
+  
+  .me-auto {
+    margin-right: auto;
+  }
+  .align-items-center {
+    align-items: center;
+  }
+  .container-fluid {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+  }
+
+/* PHP Email Form Messages
+------------------------------*/
+.php-email-form .error-message {
+    display: none;
+    background: #df1529;
+    color: #ffffff;
+    text-align: left;
+    padding: 15px;
+    margin-bottom: 24px;
+    font-weight: 600;
+  }
+  
+  .php-email-form .sent-message {
+    display: none;
+    color: #ffffff;
+    background: #059652;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 24px;
+    font-weight: 600;
+  }
+  
+  .php-email-form .loading {
+    display: none;
+    background: var(--surface-color);
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 24px;
+  }
+  
+  .php-email-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid var(--accent-color);
+    border-top-color: var(--surface-color);
+    animation: php-email-form-loading 1s linear infinite;
+  }
+  
+  @keyframes php-email-form-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  
+  /*--------------------------------------------------------------
+  # General Styling & Shared Classes
+  --------------------------------------------------------------*/
+  body {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    font-family: var(--default-font);
+  }
+  
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  a:hover {
+    color: color-mix(in srgb, var(--accent-color), transparent 25%);
+    text-decoration: none;
+  }
+  
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+  }
+  
+  [data-aos] {
+    pointer-events: auto;
+  }
+
+  /*--------------------------------------------------------------
+# Global Header
+--------------------------------------------------------------*/
+
+  .header .logo {
+    line-height: 1;
+  }
+  
+  .header .logo img {
+    max-height: 36px;
+    margin-right: 8px;
+  }
+  
+  .header .logo h1 {
+    font-size: 30px;
+    margin: 0;
+    font-weight: 700;
+    color: var(--heading-color);
+  }
+  
+  @media (max-width: 480px) {
+    .header .logo img {
+      max-height: 24px;
+    }
+  
+    .header .logo h1 {
+      font-size: 24px;
+    }
+  }
+  .header .btn-getstarted,
+.header .btn-getstarted:focus {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-size: 14px;
+  padding: 8px 25px;
+  margin: 0 0 0 30px;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.header .btn-getstarted:hover,
+.header .btn-getstarted:focus:hover {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
+@media (max-width: 1200px) {
+  .header .logo {
+    order: 1;
+  }
+
+  .header .btn-getstarted {
+    order: 2;
+    margin: 0 15px 0 0;
+    padding: 6px 15px;
+  }
+}
+
+.header .navmenu {
+    order: 2;
+  }
+
+.header .btn-getstarted {
+    order: 3;
+  }
+
+/* Index Page Header
+------------------------------*/
+.index-page .header {
+    --background-color: rgba(255, 255, 255, 0);
+  }
+  
+  /* Index Page Header on Scroll
+  ------------------------------*/
+  .index-page.scrolled .header {
+    --background-color: #ffffff;
+  }
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Roboto;
+  }
+  
+  /* Header Container */
+  .header {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space out the left-side and right-side content */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    height: 80px; /* Increase the height of the header bar */
+    z-index: 1000; /* Ensure the header is above other content */
+  }
+  
+  /* Left Side Content (Site Name and Logo) */
+  .left-side {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Space between logo and site name */
+    margin-left: 98px;
+  }
+  
+  .logo img {
+    max-height: 60px; /* Adjust logo height if needed */
+  }
+  
+  .sitename {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0;
+    padding-right: 338px;
+    
+  }
+  
+  /* Right Side Content (Nav Menu and Buttons) */
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Navigation Menu */
+  .navmenu {
+    display: flex;
+    align-items: center;
+    margin-right: 5px; /* Space between nav menu and buttons */
+  }
+  
+  .navmenu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+  }
+  
+  .navmenu ul li {
+    margin: 0 15px;
+  }
+  
+  .navmenu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  
+  .navmenu ul li a:hover,
+  .navmenu ul li a:focus {
+    color: #007bff;
+  }
+  
+  /* Mobile Menu Toggle */
+  .mobile-nav-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  /* Button Styles */
+  .btn-getstarted {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-left: 10px; /* Space between buttons */
+  }
+  
+  .btn-getstarted:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1199px) {
+    .navmenu ul {
+      display: none; /* Hide navigation links on smaller screens */
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 15px;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 200px;
+    }
+  
+    .navmenu ul.active {
+      display: flex;
+    }
+  
+    .navmenu ul li {
+      margin: 10px 0;
+    }
+  
+    .mobile-nav-toggle {
+      display: block;
+    }
+  }
+  
+  /* Modal Styles (Optional) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+/* Container Styles */
+.container {
+    max-width: 1550px;
+    margin: 0 auto;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 500px;
+}
+
+
+/* Section Title */
+.section-title {
+    width: 100%;
+    max-width: 1285px;
+    margin: 30 auto;
+    padding: 200px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center the cards horizontally */
+}
+
+/* Card Styles */
+.card {
+    position: relative;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 200px;
+    margin: 10px;
+    height: 350px;
+    cursor: pointer;
+    transition: transform 0.6s ease, box-shadow 0.3s ease; /* Smooth transition for card movement */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card Image */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Card Content */
+.card-content {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Hover Info */
+.card-hover-info {
+    position: absolute;
+    top: 0;
+    left: 100%; /* Position to the right of the card */
+    width: 250px; /* Adjust width for hover info */
+    height: 100%; /* Full height of the card */
+    background-color: rgba(0,0,0, 0.9); /* Semi-transparent background */
+    color: #fff;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateX(-10px); /* Initially hidden, adjust if needed */
+    transition: transform 0.6s ease, opacity 0.6s ease; /* Smooth transition for hover effect */
+    opacity: 0;
+    z-index: 10; /* Ensure it appears above other content */
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card:hover .card-hover-info {
+    transform: translateX(0); /* Slide hover info into view */
+    opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .card {
+      width: 250px; /* Adjusted width for medium screens */
+      height: 180px; /* Adjusted height for medium screens */
+  }
+
+  .card-hover-info {
+      width: 200px; /* Adjusted width for medium screens */
+      display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+      width: 200px; /* Adjusted width for small screens */
+      height: 150px; /* Adjusted height for small screens */
+  }
+
+  .card-hover-info {
+      width: 150px; /* Adjusted width for small screens */
+  }
+}
+
+.card-content h3 {
+    margin: 0;
+    font-size: 1.25rem; /* Adjust font size for vertical rectangles */
+    color: #333;
+}
+
+.card-content p {
+    font-size: 1rem; /* Adjust font size for vertical rectangles */
+    color: #666;
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-5px); /* Slight lift for cards */
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .card {
+        width: 180px; /* Slightly smaller width on medium screens */
+        height: 320px; /* Slightly smaller height on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 150px; /* Even smaller width on small screens */
+        height: 270px; /* Even smaller height on small screens */
+    }
+}
+
+main {
+  padding-top: 60px;
+}
+
+body {
+  margin-top: 60px;
+}
+
+
+
+
+
+

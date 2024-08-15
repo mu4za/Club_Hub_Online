@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClubHubOnline | Student Dashboard</title>
+    <link rel="stylesheet" href="Clubs.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="Student-dashboard.css"> <!-- Add this line for the new CSS -->
+</head>
+<body class="index-page">
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+            <a href="index.html" class="logo d-flex align-items-center me-auto">
+                <img src="assets/img/logo.png" alt="ClubHubOnline Logo">
+                <h1 class="sitename">ClubHubOnline | Student Profile</h1>
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="Student-dashboaed.html#Dashboard" class="active">Dashboard</a></li>
+                    <li><a href="Clubs.html">Clubs</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+
+            <button onclick="document.getElementById('id01').style.display='block'" class="btn-getstarted">Login</button>
+
+            <!-- Modal for Login -->
+            <div class="modal" id="id01">
+                <form class="modal-content animate" action="#" method="post">
+                    <div class="img-container">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    </div>
+                    <div class="container">
+                        <label for="user"><b>Username/email:</b></label>
+                        <input type="text" name="user" placeholder="Enter Username" required><br><br>
+                        <label for="pass"><b>Password:</b></label>
+                        <input type="password" name="pass" placeholder="******" required><br><br>
+                        <button type="submit">Login</button><br><br>
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"> Remember me
+                        </label><br><br>
+                    </div>
+                    <div class="container">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'">Cancel</button>
+                        <span class="psw">Forgot <a href="#">password?</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Welcome to your Dashboard</h2>
+            <button class="btn-toggle" onclick="toggleDashboard()">☰</button> <!-- Button to toggle the dashboard -->
+
+            <div class="container1">
+                <div class="container1">
+                    <h3>Your Clubs</h3>
+                    <ul>
+                        <li><a href="#">Club 1</a></li>
+                        <li><a href="#">Club 2</a></li>
+                        <li><a href="#">Club 3</a></li>
+                    </ul>
+                    <a href="#" class="btn-getstarted">Manage Clubs</a>
+                </div>
+            </div>
+        </div><!-- End Section Title -->
+    </main>
+
+    <main class="main">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Our Department Clubs</h2>
+    
+            <div class="container1">
+                <div class="card-container">
+                    <!-- Card 1 -->
+                    <div id="card1" class="card">
+                        <img src="assets/img/article_club.png" alt="Club 1 Image">
+                        <div class="card-content">
+                            <h3>THE DATA TIMES</h3>
+                            <p>Short description of Club 1.</p>
+                        </div>
+                        <div class="card-hover-info">
+                            <!-- Additional hover content here -->
+                        </div>
+                    </div>
+    
+                    <!-- Card 2 -->
+                    <div id="card2" class="card">
+                        <img src="assets/img/features-3.jpg" alt="Club 2 Image">
+                        <div class="card-content">
+                            <h3>ORATOR'S CLUB</h3>
+                            <p>Short description of Club 2.</p>
+                        </div>
+                        <div class="card-hover-info">
+                            <!-- Additional hover content here -->
+                        </div>
+                    </div>
+    
+                    <!-- Card 3 -->
+                    <div id="card3" class="card">
+                        <img src="assets/img/features-4.jpg" alt="Club 3 Image">
+                        <div class="card-content">
+                            <h3>Club 3</h3>
+                            <p>Short description of Club 3.</p>
+                        </div>
+                        <div class="card-hover-info">
+                            <!-- Additional hover content here -->
+                        </div>
+                    </div>
+    
+                    <!-- Card 4 -->
+                    <div id="card4" class="card">
+                        <img src="assets/img/features-5.jpg" alt="Club 4 Image">
+                        <div class="card-content">
+                            <h3>TROUBLESHOOTERS</h3>
+                            <p>Short description of Club 4.</p>
+                        </div>
+                        <div class="card-hover-info">
+                            <!-- Additional hover content here -->
+                        </div>
+                    </div>
+    
+                    <!-- Card 5 -->
+                    <div id="card5" class="card">
+                        <img src="assets/img/features-6.jpg" alt="Club 5 Image">
+                        <div class="card-content">
+                            <h3>Cozy Culture Club</h3>
+                            <p>Short description of Club 5.</p>
+                        </div>
+                        <div class="card-hover-info">
+                            <!-- Additional hover content here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Section Title -->
+    </main>
+    
+    
+</body>
+</html>

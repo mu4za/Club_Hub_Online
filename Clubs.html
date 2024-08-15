@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClubHubOnline | Clubs</title>
+  <link rel="stylesheet" href="Clubs.css">
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="Student-dashboard.css">
+  <script src="https://kit.fontawesome.com/67a4def2d4.js" crossorigin="anonymous"></script>
+</head>
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="assets/img/logo.png" alt="">
+        <h1 class="sitename">ClubHubOnline | Clubs</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <button style="width:auto;" class="btn-getstarted">Login</button>
+      <a class="btn-getstarted" href="index.html#about">Sign Up</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Our Department Clubs</h2>
+        <div class="container1">
+            <div class="card-container">
+                <!-- Card 1 -->
+                <div id="card1" class="card" data-club="1">
+                    <img src="assets/img/article_club.png" alt="Club 1 Image">
+                    <div class="card-content">
+                        <h3>THE DATA TIMES</h3>
+                        <p>Short description of Club 1.</p>
+                    </div>
+                    <div class="card-hover-info">
+                        Hello!!!!!!!!!!!
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div id="card2" class="card" data-club="2">
+                    <img src="assets/img/features-3.jpg" alt="Club 2 Image">
+                    <div class="card-content">
+                        <h3>ORATOR'S CLUB</h3>
+                        <p>Short description of Club 2.</p>
+                    </div>
+                    <div class="card-hover-info">
+                        HELLOOOOOO!!!!!!
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div id="card3" class="card" data-club="3">
+                    <img src="assets/img/features-4.jpg" alt="Club 3 Image">
+                    <div class="card-content">
+                        <h3>Club 3</h3>
+                        <p>Short description of Club 3.</p>
+                    </div>
+                    <div class="card-hover-info">
+                        Helooo!!!!!!!
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div id="card4" class="card" data-club="4">
+                    <img src="assets/img/features-5.jpg" alt="Club 4 Image">
+                    <div class="card-content">
+                        <h3>TROUBLESHOOTERS</h3>
+                        <p>Short description of Club 4.</p>
+                    </div>
+                    <div class="card-hover-info">
+                        Hello!!!!!!
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div id="card5" class="card" data-club="5">
+                    <img src="assets/img/features-6.jpg" alt="Club 5 Image">
+                    <div class="card-content">
+                        <h3>Cozy Culture Club</h3>
+                        <p>Short description of Club 5.</p>
+                    </div>
+                    <div class="card-hover-info">
+                        Hello!!!!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>
+
+  <!-- Dashboard Panel -->
+  <div id="student-dashboard" class="side-panel">
+    <button class="btn-close" onclick="toggleDashboard()"><i class="fa-solid fa-xmark" style="color: #3e5055;"></i></button>
+    <h2>Student Dashboard</h2>
+    <div class="dashboard-content">
+        Club----1
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem 
+        provident repudiandae quam eveniet enim iure porro tenetur sed ipsam 
+        praesentium, suscipit 
+        aut libero ullam. Labore distinctio eum at dolorum atque!
+    </div>
+  </div>
+
+  <script>
+    // Function to toggle the dashboard visibility
+    function toggleDashboard() {
+        const panel = document.getElementById('student-dashboard');
+        panel.classList.toggle('active');
+    }
+
+    const clubData = {
+  1: {
+    icon: 'assets/img/article_club.png',
+    description: 'Short description of Club 1.',
+    roles: {
+      'President': 'Alice',
+      'Secretary': 'Bob'
+    }
+  },
+  2: {
+    icon: 'assets/img/features-3.jpg',
+    description: 'Short description of Club 2.',
+    roles: {
+      'President': 'Charlie',
+      'Treasurer': 'David'
+    }
+  },
+  3: {
+    icon: 'assets/img/features-4.jpg',
+    description: 'Short description of Club 2.',
+    roles: {
+      'President': 'Charlie',
+      'Treasurer': 'David'
+    }
+  },
+  4: {
+    icon: 'assets/img/features-5.jpg',
+    description: 'Short description of Club 2.',
+    roles: {
+      'President': 'Charlie',
+      'Treasurer': 'David'
+    }
+  },
+  5: {
+    icon: 'assets/img/features-6.jpg',
+    description: 'Short description of Club 2.',
+    roles: {
+      'President': 'Charlie',
+      'Treasurer': 'David'
+    }
+
+  }
+};
+
+
+
+function openDashboard(cardId) {
+  const club = clubData[cardId];
+  const dashboardContent = document.querySelector('.dashboard-content');
+
+  if (club) {
+    dashboardContent.innerHTML = `
+      <img src="${club.icon}" alt="${club.description}">
+      <h3>Details of Club ${cardId}</h3>
+      <p>${club.description}</p>
+      <h4>Roles and Members:</h4>
+      <ul>
+        ${Object.entries(club.roles).map(([role, member]) => `
+          <li><strong>${role}:</strong> ${member}</li>
+        `).join('')}
+      </ul>
+      <button class="btn-explore">Explore More</button>
+    `;
+    toggleDashboard(); // Toggle the dashboard visibility after updating content
+  } else {
+    console.error(`Club ID ${cardId} not found in the clubData.`);
+  }
+}
+
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('click', () => {
+    const clubId = card.getAttribute('data-club');
+    if (clubId) {
+      openDashboard(clubId);
+    }
+  });
+});
+
+
+
+</script>
+  
+
+
+</body>
+</html>

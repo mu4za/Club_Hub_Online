@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <h2>MODEL LOGIN--ClubHubOnline</h2>
+  <center>
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button><br><br>
+
+    <!-- class=model for css and id=id01 for js -->
+    <div class="modal" id="id01">
+
+        <!--modal-content is a class for designing model background 
+            and animate is another class for animation/delayed display of the form.
+        -->
+        <form class="modal-content animate" action="#" method="post">
+
+            <!--A 'X' option will be created for closing the login page in the Modal itself-->
+            <div class="img-container">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">
+                    &times;
+                </span>
+            </div>
+
+            <div class="container"> <!--creating an class-container for entire form-->
+                <label for="user"><b>Username/email: </b></label>
+                <input type="text" name="user" placeholder="Enter Username" required><br><br>
+
+                <label for="pass"><b>Password: </b></label>
+                <input type="password" name="pass" placeholder="******" required><br><br>
+
+                <button type="submit">Login</button><br><br>
+
+                <label>
+                    <input type="checkbox" checked="checked" name="remember">
+                    Remember me
+                </label><br><br>
+            </div>
+
+            <div class="container">
+                <button type="button" onclick="document.getElementById('id01').style.display='none' ">Cancel</button>
+                <span class="psw">Forget <a href="#">password?</a></span>
+            </div>
+        </form>
+    </div>
+  </center>
+
+    <script>
+        var modal = document.getElementById('id01') ;
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none" ;
+            }
+        }
+    </script>
+
+</body>
+</html>
